@@ -1,0 +1,56 @@
+<div class="container">
+    <form [formGroup]="nuevoForm" (submit)="postFrom()">
+        <div class="form-group">
+            <label for="">Codigo Usuario</label>
+            <input (change)="descuentoC();" type="number" class="form-control" placeholder="Codigo Usuario"
+                formControlName="idcliente">
+        </div>
+        <div class="form-group">
+            <label for="">Peso del Paquete</label>
+            <input type="number" class="form-control" placeholder="peso" formControlName="peso">
+        </div>
+
+        <div class="form-group">
+            <label for="">Ancho del Paquete</label>
+            <input type="number" class="form-control" placeholder="Ancho" formControlName="ancho">
+        </div>
+        <div class="form-group">
+            <label for="">Alto del Paquete</label>
+            <input type="number" class="form-control" placeholder="Alto" formControlName="alto">
+        </div>
+        <div class="form-group">
+            <label for="">Largo del Paquete</label>
+            <input ng-change="getTarifaN()" ng-model="tarifaNueva" type="number" class="form-control"
+                placeholder="Largo" formControlName="largo">
+        </div>
+        <div class="form-group">
+            <label for="">País Destino</label>
+            <select (change)="getTarifaN();" id="paisSelectd" class="paisori" ng-model="pais" value="{{pais}}"
+                class="form-control" formControlName="paisDestino">
+                <option value="Guatemala">Guatemala</option>
+                <option value="Colombia">Colombia</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Honduras">Honduras</option>
+            </select>
+
+        </div>
+        <div class="form-group">
+            <label for="">Region</label>
+            <select (change)="getTotal();" class="form-control" placeholder="Pais destino" formControlName="region">
+                <option value="NORTE AMERICA">Norte América</option>
+                <option value="CENTRO AMERICA">Centro América</option>
+                <option value="SURAMERICA">SurAmérica</option>
+            </select>
+        </div>
+        <br />
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function getTarifa() {
+        console.log("hola")
+    }
+</script>
